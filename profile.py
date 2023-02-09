@@ -10,7 +10,11 @@ node.routable_control_ip = "true"
 
 node.addService(rspec.Execute(shell="/bin/sh", command="sudo apt update"))
 node.addService(rspec.Execute(shell="/bin/sh", command="sudo apt install apache2"))
-node.addService(rspec.Execute(shell="/bin/sh", command="sudo ufw allow "Apache Full""))
+node.addService(rspec.Execute(shell="/bin/sh", command="sudo ufw allow"Apache Full""))
+node.addService(rspec.Execute(shell="/bin/sh", command="sudo a2enmod ssl"))
+node.addService(rspec.Execute(shell="/bin/sh", command="sudo systemctl restart apache2"))
+
+
 #node.addService(rspec.Execute(shell="/bin/sh", command="sudo apt install -y nginx"))
 #node.addService(rspec.Execute(shell="/bin/sh", command='sudo systemctl status apache2'))
 
